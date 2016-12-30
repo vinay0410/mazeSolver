@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 import math
+import sys
 
 ##  Returns sine of an angle.
 def sine(angle):
@@ -287,7 +288,7 @@ def main(filePath, flag = 0):
             return graph
 ## The main() function is called here. Specify the filepath of image in the space given.
 if __name__ == "__main__":
-    filepath = "image_06.jpg"     ## File path for test image
+    filepath = sys.argv[1]     ## File path for test image
     img = main(filepath)          ## Main function call
     cv2.imshow("image",img)
     cv2.waitKey(0)

@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 import math
+import sys
 
 ## Reads image in HSV format. Accepts filepath as input argument and returns the HSV
 ## equivalent of the image.
@@ -470,7 +471,7 @@ def main(filePath, flag = 0):
     
 ## The main() function is called here. Specify the filepath of image in the space given.
 if __name__ == "__main__":
-    filePath = "image_09.jpg"     ## File path for test image
+    filePath = sys.argv[1]     ## File path for test image
     img = main(filePath)           ## Main function call
     cv2.imshow("image",img)
     cv2.waitKey(0)
