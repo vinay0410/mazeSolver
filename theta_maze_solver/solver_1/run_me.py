@@ -278,7 +278,7 @@ def main(filePath, flag = 0):
     print shortestPath
     string = str(shortestPath) + "\n"
     for i in shortestPath:               ## Loop to paint the solution path.
-        img = colourCell(img, i[0], i[1], size, 230)
+        img = colourCell(img, i[0], i[1], size, 215)
     if __name__ == '__main__':     ## Return value for main() function.
         return img
     else:
@@ -290,6 +290,7 @@ def main(filePath, flag = 0):
 if __name__ == "__main__":
     filepath = sys.argv[1]     ## File path for test image
     img = main(filepath)          ## Main function call
-    cv2.imshow("image",img)
+    cv2.imshow("canvas",img)
+    cv2.imwrite("solution1.jpg", img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()

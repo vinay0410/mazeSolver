@@ -473,7 +473,8 @@ def main(filePath, flag = 0):
 if __name__ == "__main__":
     filePath = sys.argv[1]     ## File path for test image
     img = main(filePath)           ## Main function call
-    cv2.imshow("image",img)
+    cv2.imshow("canvas",img)
+    cv2.imwrite("sol_theta2.jpg", img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     
