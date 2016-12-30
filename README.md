@@ -7,4 +7,4 @@ such as
 ![Circular Maze](images/theta_maze1.jpg?raw=true "Theata Maze")
 and also with markers
 
-![Square Maze](images/square_maze3.jpg?raw=true "Square Maze")
+![Square Maze](images/square_maze2.jpg?raw=true "Square Maze")
