@@ -119,14 +119,14 @@ def colourCell(img,row,column,colourVal):   ## Add required arguments here.
     	return img
 
 ##  Function that accepts some arguments from user and returns the graph of the maze image.
-def buildGraph(img, initial_point, listOfMarkers):  ## You can pass your own arguments in this space.
+def buildGraph(img, margin, listOfMarkers):  ## You can pass your own arguments in this space.
 	graph = {}
     #############  Add your Code here   ###############
 	img = cv2.cvtColor(img, cv2.COLOR_HSV2BGR)
 	img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     
-	for row in range(initial_point[1], initial_point[0]+1):
-		for col in range(initial_point[1], initial_point[0]+1):
+	for row in range(margin[0], margin[1]+1):
+		for col in range(margin[0], margin[1]+1):
 			point = (row, col)
 	#		print point
 			neigh = findNeighbours(img, row, col)
@@ -281,9 +281,9 @@ def main(filePath, flag = 0):
     listOfMarkers = findMarkers(imgHSV)              ## Acquire the list of markers with their coordinates. 
     test = str(listOfMarkers)
     imgBinary = readImageBinary(filePath)          ## Acquire the binary equivalent of image.
-    initial_point = ((len(imgBinary)/20)-1,0)      ## Bottom Left Corner Cell
-    final_point = (0, (len(imgBinary[0])/20) - 1)  ## Top Right Corner Cell
-    pathArray = findOptimumPath(buildGraph(imgHSV, initial_point, listOfMarkers),initial_point,final_point,listOfMarkers) ## Acquire the list of paths for optimum traversal.
+    initial_point = (0,0)      ## Bottom Left Corner Cell
+    final_point = ((len(imgBinary[0])/20) - 1, (len(imgBinary[0])/20) - 1)  ## Top Right Corner Cell
+    pathArray = findOptimumPath(buildGraph(imgHSV, (initial_point[0], final_point[0]), listOfMarkers),initial_point,final_point,listOfMarkers) ## Acquire the list of paths for optimum traversal.
     print pathArray
     img = colourPath(imgBinary, pathArray)         ## Highlight the whole optimum path in the maze image
     if __name__ == "__main__":                    
@@ -300,6 +300,7 @@ if __name__ == "__main__":
     filePath = sys.argv[1]                        ## Insert filepath of image here
     img = main(filePath)                 
     cv2.imshow("canvas", img)
+    cv2.imwrite("solution2.jpg", img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 

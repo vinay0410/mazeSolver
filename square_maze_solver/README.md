@@ -7,4 +7,5 @@ Solver 1 solves mazes without markers or checkpoints which are supposed to be tr
 
 Whereas Solver 2 solves mazes while traversing all the markers present between the origin and destination path, follwing is an example
 
-!["Square maze"](../images/square_maze3.jpg?raw=true "Square maze")
+!["Square maze"](../images/square_maze4.jpg?raw=true "Square maze")
+!["Square maze"](../images/solution2.jpg?raw=true "Square maze")
