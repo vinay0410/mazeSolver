@@ -9,3 +9,4 @@ such as
 and also with markers
 
 ![Square Maze](images/square_maze2.jpg?raw=true "Square Maze")
+![Circular Maze](images/theta_maze3.jpg?raw=true "Theta Maze")
